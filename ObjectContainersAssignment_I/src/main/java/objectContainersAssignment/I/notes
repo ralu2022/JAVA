@@ -1,0 +1,27 @@
+
+ TreeSet<Person> persons = new TreeSet<>(new NameComparator());
+ TreeSet<Person> persons = new TreeSet<>(new AgeComparator());
+
+ For this lines of code from file TreeSetPerson, I documented myself from this links:
+
+ https://www.geeksforgeeks.org/treeset-comparator-method-in-java-with-examples/
+ https://www.geeksforgeeks.org/creating-treeset-with-comparator-by-user-define-objects-in-java/
+
+ Conclusion was that in order for the program to work properly with the requested comparators, I had to add new NameComparator
+ / new Age Comparator inside the () because I had declared a TreeSet with <Person> (object) and not <String> / <Int>/ etc.
+
+ Reason for searching a solution was because I have encounter the error/exception:
+
+ "C:\Program Files\Amazon Corretto\jdk17.0.6_10\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.2\lib\idea_rt.jar=49899:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.2\bin" -Dfile.encoding=UTF-8 -classpath "D:\2. Scoala informala de IT\Java\Projects\ObjectContainersAssignment_I\target\classes" objectContainersAssignment.I.TreeSetPerson
+ Exception in thread "main" java.lang.ClassCastException: class objectContainersAssignment.I.Person cannot be cast to class java.lang.Comparable (objectContainersAssignment.I.Person is in unnamed module of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+ 	at java.base/java.util.TreeMap.compare(TreeMap.java:1569)
+ 	at java.base/java.util.TreeMap.addEntryToEmptyMap(TreeMap.java:776)
+ 	at java.base/java.util.TreeMap.put(TreeMap.java:785)
+ 	at java.base/java.util.TreeMap.put(TreeMap.java:534)
+ 	at java.base/java.util.TreeSet.add(TreeSet.java:255)
+ 	at objectContainersAssignment.I.TreeSetPerson.main(TreeSetPerson.java:23)
+
+ Process finished with exit code 1
+
+
+The rest of the code has been done based on the code presented in class and video :)
